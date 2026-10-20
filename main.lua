@@ -1,207 +1,125 @@
+foodName1 = {"Apple","Orange","Pie","Candy","Sugar","Cheese","Cake","Cookie","Chips","Carrots","Matcha","Tea","Coffee","Toffee","Honey"}
+flowerName2 = {"Daisy","Peony","Rose","Lily","Lilac","Orchid","Hibiscus","Blossom","Bloom","Petal","Leaf","Bush"}
+ponyType = {"Earth","Unicorn","Pegasus","Sea"}
 require("L5")
 
 function setup()
-  size(800, 600)
+  size(400, 700)
+  windowTitle("HW8 Geraldine")
 
-  -- Set the program title
-  windowTitle("HW5 Geraldine")
+  describe('MLP name.')
 
-  describe('Draws a cityscape')
-end
+  background(169, 112, 199)
+  --button dimensions
+  x1 = width/2.7
+  y1 = 150
+  w = 100
+  h = 30
+  x2 = 180-w
+  x3 = 220
+  y2 = y1 + 125
 
-function draw()
-  -- Fills the background with the color yellow
-  background(90, 79, 140)
+  --button TEXT widths
+  ptx = width/2-10
+  n1x = width/2-x2+3
+  n2x = width/2+65
 
- --middle
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(200, 203, 242)
-  quad(width / 3.5, height / 2.75, width / 1.2, height / 2.7, width / 1.2, height / 1, width / 3.5, height / 1)
+  tempType = ""
+  tempFood = ""
+  tempFlower = ""
+    
 
-  stroke(151, 150, 171)
-  strokeWeight(20)
-  line(297, 267, 458, 269)
-  line(297, 312, 458, 315)
-  line(297, 360, 458, 362)
+  background(169, 112, 199)
+  fill(250, 239, 255)
+  textSize(30)
+  textAlign(CENTER)
+  text("What Is My 'My Little Pony' Character?",290,30,400)
 
-  --middle right's side
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(200, 203, 242)
-  quad(width / 1.2, height / 17, width / 1.04, height / 9, width / 1.04, height / 1, width / 1.2, height / 1)
+  --random buttons
+  stroke(101, 45, 135)
+  strokeWeight(5)
+  fill(234, 66, 139)
+  rect(x1,y1,w,h)
+  rect(x2,y2,w,h)
+  rect(x3,y2,w,h)
   
-  --middle right
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(138, 141, 184)
-  quad(width / 1.6, height / 10, width / 1.2, height / 17, width / 1.2, height / 1, width / 1.6, height / 1)
-  
-  stroke(55, 54, 74)
-  strokeWeight(15)
-  x1 = 519
-  x2 = 650
-  y1 = 102
-  y2 = 85
-  z = 60
-  a = z-1
-  i = 1
-  line(x1, y1, x2, y2)
-  repeat
-    drawWindowLines1()
-    i = i + 1
-  until i >= 10
+  --ready and reset buttons
+  fill(255, 192, 233)
+  rect(x1-60,600,w,h)
+  rect(x1+60,600,w,h)
 
-    --back left  
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(200, 203, 242)
-  rect(0, 0, width / 4, height / 1)
+  fill(101, 45, 135)
+  textSize(15)
+  text("PONY TYPE",ptx,y1+5,w)
+  text("FIRST NAME",n1x,y2+5,w)
+  text("LAST NAME",n2x,y2+5,w)
+  text("READY",x1-35,605,w)
+  text("RESET",x1+85,605,w)
 
-  stroke(151, 150, 171)
-  strokeWeight(20)
-  x1 = 18
-  x2 = 177
-  y1 = 31
-  y2 = 33
-  z = 50
-  a = z-0.05
-  i = 1
-  line(x1, y1, x2, y2)
-  repeat
-    drawWindowLines2()
-    i = i + 1
-  until i >= 10
-
-  --middle left  
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(138, 141, 184)
-  quad(width / 10, height / 10, width / 3, height / 8, width / 3, height / 1, width / 10, height / 1)
-
-  stroke(55, 54, 74)
-  strokeWeight(15)
-  x1 = 101
-  x2 = 239
-  y1 = 102
-  y2 = 110
-  z = 50
-  a = z-0.3
-  i = 1
-  line(x1, y1, x2, y2)
-  repeat
-    drawWindowLines2()
-    i = i + 1
-  until i >= 10
-
-  --middle left's side
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(200, 203, 242)
-  quad(width / 14, height / 8, width / 10, height / 10, width / 10, height / 1, width / 14, height / 1)
-
-  --back right's side  
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(138, 141, 184)
-  quad(width / 1.05, height / 4.5, width / 1, height / 4.18, width / 1, height / 1, width / 1.05, height / 1)
-
-  --back right 
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(109, 113, 179)
-  quad(width / 1.3, height / 3.95, width / 1.05, height / 4.5, width / 1.05, height / 1, width / 1.3, height / 1)  
-
-  stroke(46, 14, 135)
-  strokeWeight(20)
-  x1 = 630
-  x2 = 745
-  y1 = 180
-  y2 = 165
-  z = 45
-  a = z-.1
-  i = 1
-  line(x1, y1, x2, y2)
-  repeat
-    drawWindowLines1()
-    i = i + 1
-  until i >= 20
-
-  --front left
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(37, 45, 184)
-  quad(width / 20, height / 2, width / 3.5, height / 1.9, width / 3.5, height / 1, width / 20, height / 1)
-
-  stroke(18, 7, 46)
-  strokeWeight(30)
-  x1 = 69
-  x2 = 204
-  y1 = 337
-  y2 = 350
-  z = 60
-  a = z-.05
-  i = 1
-  line(x1, y1, x2, y2)
-  repeat
-    drawWindowLines2()
-    i = i + 1
-  until i >= 10
-
-  --front left's side
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(109, 113, 179)
-  quad(0, height / 1.9, width / 20, height / 2, width / 20, height / 1, 0, height / 1)
-
-  --front right
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(37, 45, 184)
-  quad(width / 2.5, height / 1.5, width / 1.25, height / 1.55, width / 1.25, height / 1, width / 2.5, height / 1)
-
-  stroke(18, 7, 46)
-  strokeWeight(30)
-  x1 = 344
-  x2 = 604
-  y1 = 440
-  y2 = 430
-  z = 60
-  a = z-1
-  i = 1
-  line(x1, y1, x2, y2)
-  repeat
-    drawWindowLines1()
-    i = i + 1
-  until i >= 4
-
-  --front right's side
-  stroke(140, 111, 173)
-  strokeWeight(2)
-  fill(109, 113, 179)
-  quad(width / 1.25, height / 1.55, width / 1.15, height / 1.45, width / 1.15, height / 1, width / 1.25, height / 1)
-
-  --[[textAlign(CENTER)
-  textSize(16)
-  text('x: '..mouseX..' y:'..mouseY, 50, 50)]]--
-
-  noStroke()
-  fill(40, 37, 48)
-  quad(mouseX - 400, mouseY + 100, mouseX - 300, mouseY + 80, mouseX - 300, mouseY + 100, mouseX - 400, mouseY + 80)
-  quad(mouseX - 200, mouseY + 50, mouseX - 100, mouseY + 30, mouseX - 100, mouseY + 50, mouseX - 200, mouseY + 30)
-  quad(mouseX, mouseY, mouseX + 100, mouseY - 20, mouseX + 100, mouseY, mouseX, mouseY - 20)
-  quad(mouseX + 200, mouseY - 50, mouseX + 300, mouseY - 70, mouseX + 300, mouseY - 50, mouseX + 200, mouseY - 70)
-  quad(mouseX + 400, mouseY - 100, mouseX + 500, mouseY - 120, mouseX + 500, mouseY - 100, mouseX + 400, mouseY - 120)
+  textSize(35)
+  text("You are a(n) ___ pony",width/2,400,width-30)
+  text("and your name is",width/2-25,450,width-30)
+  text("___ ___!",x2,500,width-30)
 end
 
-function drawWindowLines1()
-  line(x1, y1+z, x2, y2+a)
-  y1 = y1+z
-  y2 = y2+a
-end
+function mousePressed()
+  --repeat everything from set up
+  background(169, 112, 199)
+  fill(250, 239, 255)
+  textSize(30)
+  textAlign(CENTER)
+  text("What Is My 'My Little Pony' Character?",290,30,400)
 
-function drawWindowLines2()
-  line(x1, y1+a, x2, y2+z)
-  y1 = y1+a
-  y2 = y2+z
+  stroke(101, 45, 135)
+  strokeWeight(5)
+  fill(234, 66, 139)
+  rect(x1,y1,w,h)
+  rect(x2,y2,w,h)
+  rect(x3,y2,w,h)
+  fill(255, 192, 233)
+  rect(x1-60,600,w,h)
+  rect(x1+60,600,w,h)
+
+  fill(101, 45, 135)
+  textSize(15)
+  text("PONY TYPE",width/2-10,y1+5,w)
+  text("FIRST NAME",width/2-x2+3,y2+5,w)
+  text("LAST NAME",width/2+65,y2+5,w)
+  text("READY",x1-35,605,w)
+  text("RESET",x1+85,605,w)
+
+  textSize(35)
+  text("You are a(n) ___ pony",width/2,400,width-30)
+  text("and your name is",width/2-25,450,width-30)
+  text("___ ___!",x2,500,width-30)
+
+  textSize(20)
+  if mouseX >= x1 and mouseX <= x1+w
+  and mouseY >= y1 and mouseY <= y1+h then
+    tempType = random(ponyType)
+  elseif mouseX >= x2 and mouseX <= x2+w
+  and mouseY >= y2 and mouseY <= y2+h then
+    tempFood = random(foodName1)
+  elseif mouseX >= x3 and mouseX <= x3+w
+  and mouseY >= y2 and mouseY <= y2+h then
+    tempFlower = random(flowerName2)
+  --ready button that puts it in a sentence
+  elseif mouseX >= x1-60 and mouseX <= x1-60+w
+  and mouseY >= 600 and mouseY <= 600+h then
+    textSize(15)
+    text(tempType,245,410,w)
+    text(tempFood,120,500,w)
+    text(tempFlower,200,500,w)
+  --reset button to clear strings
+  elseif mouseX >= x1+60 and mouseX <= x1+60+w
+  and mouseY >= 600 and mouseY <= 600+h then
+    tempType = ""
+    tempFood = ""
+    tempFlower = ""
+  end
+
+  textSize(20)
+  text(tempType,ptx,y1+50,w)
+  text(tempFood,n1x,y2+50,w)
+  text(tempFlower,n2x,y2+50,w)
 end
